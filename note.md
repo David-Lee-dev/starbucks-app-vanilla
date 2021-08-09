@@ -67,7 +67,7 @@
 
 ---
 
-## 2. Header & Dropdown menue
+## 2. Header & Dropdown menu
 
 > - 도메인 주소는 생략이 가능하다
 >
@@ -165,4 +165,72 @@
 > - ``요소__일부분`` : 요소의 일부분을 표시
 > - ``요소--상태`` : 요소의 상태를 표시
 >
+> ### 2.5 lodash.js
+>
+> - 이벤트 발생 시 함수가 너무 많이 실행될 때 사용
+> - [lodash.js](https://cdnjs.com/libraries/lodash.js)
+>
+> ```js
+> window.addEventListener('scroll', _.throttle(function () {
+> }, 300))
+> ```
+>
+> - 이번 app을 제작할 때 쓰인 부분으로 스크롤 이동 이벤트 때 사용했다. 뒤에 숫자는 ms에 해당하는 인자로 해당 시간이 지난 뒤에 함수를 실행한다는 의미.
+>
+> ### 2.6 gsap
+>
+> - 애니메이션을 부드럽게 해주는 오픈소스 라이브러리
+>
+> ```js
+> // gsap.to(요소, 지속시간, 옵션)
+> gsap.to(badgeEl, .6, {
+> opacity: 0
+> })
+> ```
+
+---
+
+## 3. 순차적 애니메이션
+
+> - 이미지의 대체 텍스트에 적을 내용이 마땅치 않으면 이미지에 있는 글씨를 적는 것도 좋은 방법이다.
+>
+>  
+>
+> ### 3.1 순차적 애니메이션 적용
+>
+> ```js
+> const fadeEls = document.querySelectorAll('.visual .fade-in');
+> fadeEls.forEach(function (fadeEl, index) {
+>   gsap.to(fadeEl, 1,{
+>     delay: (index + 0.5) * .7,
+>     opacity: 1,
+>   });
+> });
+> ```
+>
+> - ``delay``는 ``gsap``에서 제공하는 속성
+
+---
+
+## 4.요소 슬라이드
+
+> - ``flex``에서 ``width``는 최대한 줄어드는 성질이 있다. ``flex-grow``속성을 이용하면 원하는대로 설정할 수 있다.
+>
+>  
+>
+> ## 4.1 calc()
+>
+> - css에서는 아래처럼 요소의 수치를 계산할 수 있는 함수를 제공한다.
+>
+> ```css
+> width: calc(819px * 3 + 20px);
+> ```
+>
+> - 요소의 수치를 정확하게 알 수 없을 때 사용하면 더욱 효과적이다.
+>
+> ```css
+> width: calc(100% + 20px);
+> ```
+>
 > 
+
