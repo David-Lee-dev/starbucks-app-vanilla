@@ -6,7 +6,6 @@ body {
   line-height: 1.4;
   color: #333;
   font-family: 'Nanum Gothic', sans-serif;
-  height: 3000px;
 }
 
 img {
@@ -55,7 +54,7 @@ a {
 
 .btn.btn--brown {
   color: #592b18;
-  background-color: #transparent;
+  background-color: transparent;
 }
 
 .btn.btn--brown:hover {
@@ -88,7 +87,6 @@ header {
   width: 100%;
   position: fixed;
   top: 0;
-  /* z-index: 9; */
   background-color: #F6F5F0;
   border-bottom: 1px solid #c8c8c8;
   z-index: 9;
@@ -103,6 +101,7 @@ header .logo {
   position: absolute;
   top: 0;
   bottom: 0;
+  left: 0;
   margin: auto;
 }
 
@@ -261,7 +260,7 @@ header .main-menu .item .item__contents .contents__texture h4 {
 }
 
 header .main-menu .item .item__contents .contents__texture p {
-  color: #669900;
+  color: #64a70b;
   margin: 4px 0 14px;
 }
 
@@ -277,7 +276,7 @@ header .badges .badge {
   margin-bottom: 12px;
   box-shadow: 4px 4px 10px rgba(0, 0, 0, .15);
   cursor: pointer;
-  transition: 0.4s;
+  /* transition: 0.4s; */
 }
 
 /* VISUAL */
@@ -441,6 +440,12 @@ header .badges .badge {
   height: 693px;
   background-color: #f6f5ef;
   position: relative;
+  transition: height .4s;
+  overflow: hidden;
+}
+
+.notice .promotion.hide {
+  height: 0px;
 }
 
 .notice .promotion .swiper-container {
