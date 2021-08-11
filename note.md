@@ -218,7 +218,7 @@
 >
 >  
 >
-> ## 4.1 calc()
+> ### 4.1 calc()
 >
 > - css에서는 아래처럼 요소의 수치를 계산할 수 있는 함수를 제공한다.
 >
@@ -232,5 +232,83 @@
 > width: calc(100% + 20px);
 > ```
 >
+> ### 4.2 컨텐츠 항상 가운데 출력하기
+>
+> ```css
+> .notice .promotion .swiper-container {
+>   width: calc(819px * 3 + 20px);
+>   /* height: 553px;
+>   background-color: orange;
+>   text-align: center;
+>   font-size: 200px;
+>   position: absolute;
+>   top: 40px; */
+>   left: 50%;
+>   margin-left: -1238.5px; /* 가로 너비 절반 */
+> }
+> ```
+>
+> - 위치 상으로 왼쪽으로 **전체 너비의 절반만큼 **이동시킨 뒤, ``margin``을 이용해서 **다시 이동한 만큼의 절반만큼 반대방향**으로 이동시킨다.
+
+---
+
+## 5. 유튜브 영상 배경
+
+> ### 5.1 가로 세로 비율 유지하기
+>
+> ```css
+> .container {
+> 	width: 500px;
+> 	background-color: royalblue;
+> }
 > 
+> .container .item{
+> 	width: 100%;
+> 	height: 0;
+> 	padding-top: 50%;
+> }
+> ```
+>
+> - ``padding-top``의 값을 50%로 하면 부모요소의 가로 너비의 50%만큼을 유지한다.
+> - 56.25%는 보편적인 영상 크기인 16:9 비율이다.
+>
+> ### 5.2 유튜브 영상 출력하기
+>
+> ```
+> // Youtube IFrame API를 비동기로 로드합니다.
+> var tag = document.createElement('script');
+> tag.src = "https://www.youtube.com/iframe_api";
+> var firstScriptTag = document.getElementsByTagName('script')[0];
+> firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+> 
+> function onYouTubePlayerAPIReady() {
+>   // <div id="player"></div>
+>   new YT.Player('player', {
+>     videoId: 'An6LvWQuj_8', // 재생할 유튜브 영상 ID
+>     playerVars: {
+>       autoplay: true, // 자동 재생 유무
+>       loop: true, // 반복 재생 유무
+>       playlist: 'An6LvWQuj_8' // 반복 재생할 유튜브 영상 ID 목록
+>     },
+>     events: {
+>       // 영상이 준비되었을 때,
+>       onReady: function (event) {
+>         event.target.mute(); // 음소거!
+>       }
+>     }
+>   });
+> }
+> ```
+>
+> - ``onYouTubePlayerAPIReady`` 함수 이름은 Youtube IFrame Player API에서 사용하는 함수이기 때문에 변경하면 안된다. 
+> - [더 많은 옵션](https://developers.google.com/youtube/player_parameters.html?playerVersion=HTML5&hl=ko#Parameters)
+>
+>  ### 5.3 Easing
+>
+> ![image-20210811211852255](note.assets/image-20210811211852255.png)
+>
+> - 애니메이션이 처리되는 속도나 형태를 조절하는 개념.
+> - [참고](https://greensock.com/docs/v2/Easing)
+
+---
 
