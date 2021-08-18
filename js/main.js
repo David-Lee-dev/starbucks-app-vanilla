@@ -49,7 +49,7 @@ new Swiper('.notice-line .swiper-container', {
   loop: true
 });
 
-// PROMOTION
+// PROMOTION and AWARDS
 new Swiper('.promotion .swiper-container', {
   slidesPerView: 3, // 한번에 보여줄 슬라이드 개수
   spaceBetween: 10, // 슬라이드 사이 여백
@@ -66,6 +66,16 @@ new Swiper('.promotion .swiper-container', {
     prevEl: '.promotion .swiper-prev',
     nextEl: '.promotion .swiper-next',
   },
+});
+new Swiper('.awards .swiper-container', {
+  autoplay: true,
+  loop: true,
+  spaceBetween: 30,
+  slidesPerView: 5,
+  navigation: {
+    prevEl: '.awards .swiper-prev',
+    nextEl: '.awards .swiper-next'
+  }
 });
 
 const promotionEl = document.querySelector('.promotion');
@@ -102,3 +112,21 @@ function floatingObject(selector, delay, size) {
 floatingObject('.floating1', 1, 15);
 floatingObject('.floating2', 5, 15);
 floatingObject('.floating3', 1.5, 20);
+
+// FIND THE STORE
+const spyEls = document.querySelectorAll('section.scroll-spy');
+spyEls.forEach(function (spyEl) {
+  new ScrollMagic
+    .Scene({
+      triggerElement: spyEl,
+      triggerHook: .8,
+    })
+    .setClassToggle(spyEl, 'show')
+    .addTo(new ScrollMagic.Controller());
+});
+
+
+// FOOTER
+const thisYear = document.querySelector('.this-year');
+const date = new Date().getFullYear();
+thisYear.textContent = `${date} Starbucks Coffee Company. All Rights Reserved.`
