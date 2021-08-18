@@ -312,3 +312,63 @@
 
 ---
 
+## 6. 고정 이미지 배경
+
+> ![ezgif.com-gif-maker](note.assets/ezgif.com-gif-maker.gif)
+>
+> ```css
+> background-attachment: fixed;
+> ```
+
+---
+
+## 7. 3D 애니메이션
+
+>- **JS를 이용할 줄 알았지만, CSS만으로도 만들 수 있다.**
+>- ``hover``를 이용해서 애니메이션을 적용시켰기 때문에 적용될 item의 크기만큼 부모요소의 크기를 조절해야 한다.
+>
+>```css
+>.reserve-store .medal {
+>  width: 334px;
+>  height: 334px;
+>  perspective: 600px;
+>}
+>
+>.reserve-store .medal .front,
+>.reserve-store .medal .back {
+>  position: absolute;
+>  width: 334px;
+>  height: 334px;
+>  backface-visibility: hidden;
+>  tra
+>```
+>
+>다른 브라우저에서도 자연스러운 동작을 할 수 있도록 시작점을 명시해야 한다.
+>
+>```css
+>.reserve-store .medal .front { /*이 부분*/
+>  transform: rotateY(0deg);
+>}
+>
+>.reserve-store .medal:hover .front {
+>  transform: rotateY(180deg);
+>}
+>
+>.reserve-store .medal .back {
+>  transform: rotateY(-180deg);
+>}
+>
+>.reserve-store .medal:hover .back {
+>  transform: rotateY(0deg);
+>}
+>```
+
+---
+
+## 8. 푸터
+
+> - html은 ``&``로 시작하는 특수 기호를 제공한다. [Character Entity Reference Chart](https://dev.w3.org/html5/html-author/charref)
+> - ``img``태그는 자동으로 가운데 정렬이 되어 있다.
+
+---
+
