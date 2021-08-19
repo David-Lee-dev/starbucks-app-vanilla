@@ -372,3 +372,24 @@
 
 ---
 
+## 9. 로그인 페이지
+
+> ```bash
+> git branch [이름]
+> git chechout [이름]
+> ```
+>
+> - 브랜치에서 작업한 뒤 생성된 변경 사항들은 master 브랜치에 영향을 미치지 않는다.
+>
+> ```bash
+> #Windows
+> git config --global core.autocrlf true
+> 
+> #MacOS, Linux
+> git config --global core.autocrlf input
+> ```
+>
+> - 운영체제별로 개행을 취급하는 방법이 다르기 때문에 통일하는 커맨드를 입력해줘야 한다.
+
+---
+
