@@ -9,7 +9,7 @@
 # 목차
 
 1. [**시작하기**](#1-시작하기)
-2. [**Header & Dropdown menu**](#2-Header & Dropdown menu)
+2. [**Header & Dropdown menu**](#2-Header-&-Dropdown-menu)
 3. [**순차적 애니메이션**](#3-순차적-애니메이션)
 4. [**요소 슬라이드**](#4-요소-슬라이드)
 5. [**유튜브 영상 배경**](#5-유튜브-영상-배경)
