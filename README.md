@@ -34,16 +34,13 @@
 ## 3.  라이브러리
 
 - ![](https://img.shields.io/badge/-Swiper-6332F6?&logo=swiper&logoColor=white) 
-
 - ![](https://img.shields.io/badge/-Lodash-gray) 
-
 - ![](https://img.shields.io/badge/-Gsap-green) 
-
-  ![](https://img.shields.io/badge/-ScrollMagic-orange?&logo=html5&logoColor=white) 
+- ![](https://img.shields.io/badge/-ScrollMagic-orange?&logo=html5&logoColor=white) 
 
 <br /><br />
 
-## 📄 주요 페이지
+## 4. 주요 페이지
 
 |                메인 페이지                 |
 | :----------------------------------------: |
